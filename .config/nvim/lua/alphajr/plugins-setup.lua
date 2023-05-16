@@ -31,7 +31,9 @@ return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
 
-  use { "bluz71/vim-nightfly-colors", as = "nightfly" }
+ -- use { "bluz71/vim-nightfly-colors", as = "nightfly" }
+  
+  use('folke/tokyonight.nvim')
 
   use "nvim-lua/plenary.nvim"
 

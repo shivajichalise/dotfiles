@@ -4,8 +4,8 @@ if not status then
   return
 end
 
--- get lualine nightfly theme
-local lualine_nightfly = require("lualine.themes.nightfly")
+-- get lualine tokyonight theme
+local lualine_tokyonight = require("lualine.themes.tokyonight")
 
 -- new colors for theme
 local new_colors = {
@@ -17,10 +17,10 @@ local new_colors = {
 }
 
 -- change nightlfy theme colors
-lualine_nightfly.normal.a.bg = new_colors.blue
-lualine_nightfly.insert.a.bg = new_colors.green
-lualine_nightfly.visual.a.bg = new_colors.violet
-lualine_nightfly.command = {
+lualine_tokyonight.normal.a.bg = new_colors.blue
+lualine_tokyonight.insert.a.bg = new_colors.green
+lualine_tokyonight.visual.a.bg = new_colors.violet
+lualine_tokyonight.command = {
   a = {
     gui = "bold",
     bg = new_colors.yellow,
@@ -31,6 +31,6 @@ lualine_nightfly.command = {
 -- configure lualine with modified theme
 lualine.setup({
   options = {
-    theme = lualine_nightfly,
+    theme = lualine_tokyonight,
   },
 })
