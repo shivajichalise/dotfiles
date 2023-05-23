@@ -70,11 +70,8 @@ return packer.startup(function(use)
       local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
       ts_update()
     end,
-  })
 
-  -- auto closing
-  use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+  })
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -104,6 +101,12 @@ return packer.startup(function(use)
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+
+  use("mg979/vim-visual-multi") -- multi cursor
+
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+  use {"neovim/nvim-lspconfig"}
 
   if packer_bootstrap then
     require("packer").sync()
