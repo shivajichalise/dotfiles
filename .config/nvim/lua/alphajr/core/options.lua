@@ -29,3 +29,4 @@ opt.incsearch = true
 
 opt.colorcolumn = "80"
 opt.cmdheight = 1
+-- opt.undofile = true

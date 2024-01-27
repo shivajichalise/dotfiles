@@ -44,3 +44,22 @@ keymap.set({"n","i", "v"}, "<UP>", "<nop>")
 keymap.set({"n","i", "v"}, "<DOWN>", "<nop>")
 keymap.set({"n","i", "v"}, "<LEFT>", "<nop>")
 keymap.set({"n","i", "v"}, "<RIGHT>", "<nop>")
+
+-- better tabbing
+keymap.set('v', '<', '<gv')
+keymap.set('v', '>', '>gv')
+
+keymap.set('n', '<space>r', vim.diagnostic.open_float)
+keymap.set('n', '[d', vim.diagnostic.goto_prev)
+keymap.set('n', ']d', vim.diagnostic.goto_next)
+keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
+keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
+keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
+
+keymap.set({"i", "s"}, "<C-E>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end, {silent = true})
