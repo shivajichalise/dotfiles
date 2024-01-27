@@ -1,21 +1,47 @@
 #!/bin/bash
+#
+#        _       _                _      
+#       | |     | |              (_)     
+#   __ _| |_ __ | |__   __ ___  ___ _ __ 
+#  / _` | | '_ \| '_ \ / _` \ \/ / | '__| Shivaji Chalise (alphajr)
+# | (_| | | |_) | | | | (_| |>  <| | |    http://www.github.com/shivajichalise
+#  \__,_|_| .__/|_| |_|\__,_/_/\_\ |_|   
+#         | |                   _/ |     
+#         |_|                  |__/      
+#
+# tmux-sessionizer (I learned this from the one and only: ThePrimeagen)
 
 if [[ $# -eq 1 ]]; then
-    dir=$1
+    selected=$1
 else
-    dir=$((find ~/Herd/projects -mindepth 1 -maxdepth 1 -type d && find ~/public_html/projects -mindepth 1 -maxdepth 2 -type d) | fzf)
+    selected=$((find ~/Herd/projects -mindepth 1 -maxdepth 1 -type d && find ~/public_html/projects -mindepth 1 -maxdepth 2 -type d) | fzf)
 fi
 
-selected_name=$(basename "$dir" | tr . _)
+selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
+create(){
+    name=$1
+    dir=$2
+
+    tmux new-session -ds $name -c $dir -n "code"
+    tmux new-window -t $name -n "server" -c $dir
+}
+
+attach(){
+    name=$1
+    window=$2
+    tmux attach-session -t "$selected_name:code"
+}
+
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
+    create $selected_name $selected
+    attach $selected_name "code"
     exit 0
 fi
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
+if ! tmux has-session -t $selected_name 2> /dev/null; then
+    create $selected_name $selected
+    attach $selected_name "code"
 fi
 
-tmux switch-client -t $selected_name
