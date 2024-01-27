@@ -72,3 +72,4 @@ export PATH="${PATH}:/Users/alphajr/.scripts"
 export PATH="/Users/alphajr/Library/Application Support/Herd/bin/":$PATH
 export HERD_PHP_82_INI_SCAN_DIR="/Users/alphajr/Library/Application Support/Herd/config/php/82/"
 
+bindkey -s ^f "tmux-sessionizer\n"
