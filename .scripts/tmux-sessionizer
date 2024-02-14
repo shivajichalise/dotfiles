@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 #        _       _                _      
 #       | |     | |              (_)     
 #   __ _| |_ __ | |__   __ ___  ___ _ __ 
@@ -14,34 +14,25 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$((find ~/Herd/projects -mindepth 1 -maxdepth 1 -type d && find ~/public_html/projects -mindepth 1 -maxdepth 2 -type d) | fzf)
+    selected=$((find ~ ~/Herd/projects ~/.config -mindepth 1 -maxdepth 1 -type d && find ~/public_html/projects -mindepth 1 -maxdepth 2 -type d) | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
 fi
 
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
-create(){
-    name=$1
-    dir=$2
-
-    tmux new-session -ds $name -c $dir -n "code"
-    tmux new-window -t $name -n "server" -c $dir
-}
-
-attach(){
-    name=$1
-    window=$2
-    tmux attach-session -t "$selected_name:code"
-}
-
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    create $selected_name $selected
-    attach $selected_name "code"
+    tmux new-session -s $selected_name -c $selected -n "code" nvim
+    tmux new-window -t $selected_name -n "server" -c $selected
     exit 0
 fi
 
-if ! tmux has-session -t $selected_name 2> /dev/null; then
-    create $selected_name $selected
-    attach $selected_name "code"
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+    tmux new-window -t $selected_name -n "server" -c $selected
 fi
 
+tmux switch-client -t $selected_name
