@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#        _       _                _      
+#       | |     | |              (_)     
+#   __ _| |_ __ | |__   __ ___  ___ _ __ 
+#  / _` | | '_ \| '_ \ / _` \ \/ / | '__| Shivaji Chalise (alphajr)
+# | (_| | | |_) | | | | (_| |>  <| | |    http://www.github.com/shivajichalise
+#  \__,_|_| .__/|_| |_|\__,_/_/\_\ |_|   
+#         | |                   _/ |     
+#         |_|                  |__/      
+#
+# trim (trim a video using from and to)
+
+if [[ $# -ne 3 ]]; then
+    echo "Usage: trim <video_file> <start_time> <end_time>"
+    exit 0
+fi
+
+video="$1"
+from="$2"
+to="$3"
+
+if [[ ! -f "$video" ]]; then
+    echo "Video file '$video' not found"
+    exit 1
+fi
+
+echo "Give a name to save it as: "  
+read -r name
+
+ffmpeg -i "$video" -ss "$from" -to "$to" -c:v copy -c:a copy "$name".mp4
