@@ -71,6 +71,9 @@ export PATH="${PATH}:/Users/alphajr/.scripts"
 export PATH="/Users/alphajr/Library/Application Support/Herd/bin/":$PATH
 export HERD_PHP_82_INI_SCAN_DIR="/Users/alphajr/Library/Application Support/Herd/config/php/82/"
 
+# Postgresql
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
 # Keybindings
 bindkey -s ^f "tmux-sessionizer\n"
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+bindkey -s ^g "ch.sh\n"
