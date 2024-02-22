@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#        _       _                _      
+#       | |     | |              (_)     
+#   __ _| |_ __ | |__   __ ___  ___ _ __ 
+#  / _` | | '_ \| '_ \ / _` \ \/ / | '__| Shivaji Chalise (alphajr)
+# | (_| | | |_) | | | | (_| |>  <| | |    http://www.github.com/shivajichalise
+#  \__,_|_| .__/|_| |_|\__,_/_/\_\ |_|   
+#         | |                   _/ |     
+#         |_|                  |__/      
+#
+# notify (send notification with given title and message)
+
+if [[ $# -ne 2 ]]; then
+    echo "Parameters required"
+    exit 0
+elif [[ $# -eq 2 ]]; then
+    title=$1
+    message=$2
+fi
+
+osascript -e "display notification \"$message\" with title \"$title\" sound name \"jojo\""
