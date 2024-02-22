@@ -4,9 +4,7 @@ local ensure_packer = function()
     local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
     if fn.empty(fn.glob(install_path)) > 0 then
         fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-        vim.cmd([[packadd packer.nvim]])
-        return true
-    end
+        vim.cmd([[packadd packer.nvim]]) return true end
     return false
 end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
@@ -89,8 +87,22 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 
     -- formatting & linting
-    use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-    use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        requires = {
+            --- Uncomment the two plugins below if you want to manage the language servers from neovim
+            -- {'williamboman/mason.nvim'},
+            -- {'williamboman/mason-lspconfig.nvim'},
+
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'L3MON4D3/LuaSnip'},
+        }
+    }
 
     use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
