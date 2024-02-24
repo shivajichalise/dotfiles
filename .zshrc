@@ -24,16 +24,8 @@ alias mux=tmuxinator
 # Deployment aliases
 alias pm='ssh -p 18765 u1904-v2qfrxmtuge9@ssh.pokharamarathon.org'
 
-pmdeploy() {
-    rsync -e 'ssh -p 18765' -avz --exclude={'.env','.env.example','index.php','public','.git','storage'} ./ u1904-v2qfrxmtuge9@ssh.pokharamarathon.org:www/test.pokharamarathon.org/public_html/dashboard
-}
-
-pmfinaldeploy() {
-    rsync -e 'ssh -p 18765' -avz --exclude={'.env','.env.example','index.php','public','.git','storage'} ./ u1904-v2qfrxmtuge9@ssh.pokharamarathon.org:www/app.pokharamarathon.org/public_html/dashboard
-}
-
 # zsh-vi-mode
- # Set ZVM_INIT_MODE before sourcing zsh-vi-mode plugin
+# Set ZVM_INIT_MODE before sourcing zsh-vi-mode plugin
 ZVM_INIT_MODE=sourcing
 if [[ -e $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]]; then
     source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
