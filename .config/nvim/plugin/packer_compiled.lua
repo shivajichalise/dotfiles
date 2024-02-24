@@ -105,6 +105,11 @@ _G.packer_plugins = {
     path = "/Users/alphajr/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["conform.nvim"] = {
+    loaded = true,
+    path = "/Users/alphajr/.local/share/nvim/site/pack/packer/start/conform.nvim",
+    url = "https://github.com/stevearc/conform.nvim"
+  },
   ["crates.nvim"] = {
     loaded = true,
     path = "/Users/alphajr/.local/share/nvim/site/pack/packer/start/crates.nvim",
@@ -229,6 +234,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/alphajr/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  treesj = {
+    loaded = true,
+    path = "/Users/alphajr/.local/share/nvim/site/pack/packer/start/treesj",
+    url = "https://github.com/Wansmer/treesj"
   },
   ["vim-be-good"] = {
     loaded = true,
