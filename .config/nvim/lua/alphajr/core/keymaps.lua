@@ -72,3 +72,7 @@ keymap.set({ "i", "s" }, "<C-E>", function()
 end, { silent = true })
 
 keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+keymap.set("n", "<leader><leader>", function()
+	vim.cmd("so")
+end)
