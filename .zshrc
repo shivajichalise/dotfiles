@@ -24,6 +24,9 @@ alias mux=tmuxinator
 # Deployment aliases
 alias pm='ssh -p 18765 u1904-v2qfrxmtuge9@ssh.pokharamarathon.org'
 
+# mkdir: create parent directories
+alias mkdir="mkdir -pv"
+
 # zsh-vi-mode
 # Set ZVM_INIT_MODE before sourcing zsh-vi-mode plugin
 ZVM_INIT_MODE=sourcing
