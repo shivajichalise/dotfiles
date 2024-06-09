@@ -1,0 +1,31 @@
+# bsp or float or stack (default: float)
+yabai -m config layout bsp
+
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# Set all padding and gaps to 3pt (default: 0)
+yabai -m config top_padding    3
+yabai -m config bottom_padding 3
+yabai -m config left_padding   3
+yabai -m config right_padding  3
+yabai -m config window_gap     3
+
+# set mouse follows focus mode (default: off)
+yabai -m config mouse_follows_focus on
+
+# set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
+yabai -m config focus_follows_mouse autoraise
+
+# set mouse interaction modifier key (default: fn)
+yabai -m config mouse_modifier alt
+
+# set modifier + left-click drag to move window (default: move)
+yabai -m config mouse_action1 move
+
+# set modifier + right-click drag to resize window (default: resize)
+yabai -m config mouse_action2 resize
+
+# disallow yabai to manage below apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
