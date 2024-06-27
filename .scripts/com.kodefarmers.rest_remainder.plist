@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.kodefarmers.rest_remainder</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/alphajr/.scripts/notify</string>
+        <string>Rest phase bro</string>
+        <string>Rest your eyes bro and drink water bro</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>1800</integer>
+    <key>ThrottleInterval</key>
+    <integer>0</integer>
+</dict>
+</plist>
