@@ -19,4 +19,4 @@ elif [[ $# -eq 2 ]]; then
     message=$2
 fi
 
-osascript -e "display notification \"$message\" with title \"$title\" sound name \"jojo\""
+osascript -e "display notification \"$message\" with title \"$title\" sound name \"jayshreeram.mp3\""

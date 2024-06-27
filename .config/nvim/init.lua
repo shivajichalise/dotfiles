@@ -1,4 +1,4 @@
-require('alphajr.plugins-setup')
+require("alphajr.plugins-setup")
 require("alphajr.core.options")
 require("alphajr.core.keymaps")
 require("alphajr.core.colorscheme")
