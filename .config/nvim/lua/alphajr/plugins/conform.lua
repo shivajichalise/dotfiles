@@ -11,6 +11,7 @@ conform.setup({
 		javascriptreact = { "prettier" },
 		typescriptreact = { "prettier" },
 		php = { "pint" },
+		blade = { "blade-formatter" },
 		cssap = { "prettier" },
 		html = { "prettier" },
 		json = { "prettier" },

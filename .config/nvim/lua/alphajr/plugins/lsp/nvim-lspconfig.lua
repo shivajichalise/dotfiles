@@ -5,13 +5,15 @@ if not status then
 end
 --
 
-lspconfig.phpactor.setup({
-	on_attach = on_attach,
-	filetypes = { "php" },
-	init_options = {
-		["language_server_php_cs_fixer.enabled"] = true,
-	},
-})
+-- lspconfig.phpactor.setup({
+-- 	on_attach = on_attach,
+-- 	filetypes = { "php" },
+-- 	init_options = {
+-- 		["language_server_php_cs_fixer.enabled"] = true,
+-- 	},
+-- })
+
+lspconfig.intelephense.setup({})
 
 lspconfig.pyright.setup({
 	on_attach = on_attach,
@@ -21,7 +23,7 @@ lspconfig.pyright.setup({
 
 lspconfig.solidity.setup({})
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
 	on_attach = on_attach,
 	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
 	cmd = { "typescript-language-server", "--stdio" },
@@ -51,4 +53,8 @@ lspconfig.gopls.setup({
 			gofumpt = true,
 		},
 	},
+})
+
+lspconfig.volar.setup({
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 })
