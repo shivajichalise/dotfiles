@@ -11,7 +11,7 @@
 #
 # cheatsheet (I learned this from the one and only: ThePrimeagen)
 
-languages=$(echo "php javascript typescript rust golang bash python solidity" | tr " " "\n")
+languages=$(echo "php javascript typescript rust golang bash python solidity curl" | tr " " "\n")
 core_utils=$(echo "awk sed xargs find head less tail grep" | tr " " "\n")
 
 selected=$(echo -e "$languages\n$core_utils" | fzf)

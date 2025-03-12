@@ -42,18 +42,12 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # Python path
 export PATH="${PATH}:/Users/alphajr/Library/Python/3.10/bin"
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # Starship prompt
 eval "$(starship init zsh)"
 
 # iTerm2 shell integration
 test -e /Users/alphajr/.iterm2_shell_integration.zsh && source /Users/alphajr/.iterm2_shell_integration.zsh || true
-
-# Pyenv setup
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 # Additional path
 export PATH="${PATH}:/Users/alphajr/.local/bin"
@@ -73,10 +67,6 @@ export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
 # Herd injected PHP 8.1 configuration.
 export HERD_PHP_81_INI_SCAN_DIR="/Users/alphajr/Library/Application Support/Herd/config/php/81/"
 
-export GOPATH=$(go env GOPATH)
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
-
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/alphajr/Library/Application Support/Herd/config/php/84/"
 
@@ -94,3 +84,8 @@ export HERD_PHP_82_INI_SCAN_DIR="/Users/alphajr/Library/Application Support/Herd
 
 # Herd injected PHP 7.4 configuration.
 export HERD_PHP_74_INI_SCAN_DIR="/Users/alphajr/Library/Application Support/Herd/config/php/74/"
+
+# Goenv setup
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"

@@ -64,7 +64,6 @@ return packer.startup(function(use)
 
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags -- treesitter configuration
 
 	-- autocompletion
 	use("hrsh7th/nvim-cmp") -- completion plugin
@@ -125,12 +124,6 @@ return packer.startup(function(use)
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
 	})
 
-	use({
-		"laytan/tailwind-sorter.nvim",
-		requires = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
-		run = "cd formatter && npm i && npm run build",
-	})
-
 	use({ "norcalli/nvim-colorizer.lua" })
 
 	use({ "simrat39/rust-tools.nvim" })
@@ -161,6 +154,14 @@ return packer.startup(function(use)
 		"Wansmer/treesj",
 		requires = { "nvim-treesitter/nvim-treesitter" },
 	})
+
+	use({
+		"lewis6991/gitsigns.nvim",
+	})
+
+	-- use({
+	-- 	"github/copilot.vim",
+	-- })
 
 	if packer_bootstrap then
 		require("packer").sync()
