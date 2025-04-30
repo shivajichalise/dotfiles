@@ -70,13 +70,17 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
 	use("hrsh7th/cmp-path") -- source for file system paths
 
-	use("rafamadriz/friendly-snippets")
 	use({
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
 		tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 		-- install jsregexp (optional!:).
 		run = "make install_jsregexp",
+
+		requires = {
+			"rafamadriz/friendly-snippets",
+			"saadparwaiz1/cmp_luasnip",
+		},
 	})
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 

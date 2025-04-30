@@ -1,7 +1,7 @@
 -- import crates plugin safely
 local status, crates = pcall(require, "crates")
 if not status then
-    return
+	return
 end
 
 crates.setup()

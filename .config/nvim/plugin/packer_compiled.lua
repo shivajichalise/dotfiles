@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?.lua;/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?/init.lua;/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?.lua;/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1736781742/lib/lua/5.1/?.so"
+local package_path_str = "/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1744318430/share/lua/5.1/?.lua;/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1744318430/share/lua/5.1/?/init.lua;/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1744318430/lib/luarocks/rocks-5.1/?.lua;/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1744318430/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/alphajr/.cache/nvim/packer_hererocks/2.1.1744318430/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -104,6 +104,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/alphajr/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/alphajr/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["conform.nvim"] = {
     loaded = true,

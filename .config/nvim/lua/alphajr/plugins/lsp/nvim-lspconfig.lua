@@ -13,7 +13,11 @@ end
 -- 	},
 -- })
 
-lspconfig.intelephense.setup({})
+lspconfig.intelephense.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "php" },
+})
 
 lspconfig.pyright.setup({
 	on_attach = on_attach,
@@ -55,6 +59,6 @@ lspconfig.gopls.setup({
 	},
 })
 
-lspconfig.volar.setup({
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-})
+-- lspconfig.volar.setup({
+-- 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+-- })
