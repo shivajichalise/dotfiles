@@ -15,6 +15,16 @@ lspconfig.null_ls.setup({
 
 		-- Prettier for code formatting
 		null_ls.builtins.formatting.prettier,
+
+		-- SQLFluff Formatter
+		null_ls.builtins.formatting.sqlfluff.with({
+			extra_args = { "--dialect", "postgres" }, -- Customize as needed
+		}),
+
+		-- SQLFluff Diagnostics (Linter)
+		null_ls.builtins.diagnostics.sqlfluff.with({
+			extra_args = { "--dialect", "postgres" },
+		}),
 	},
 	on_attach = on_attach,
 })

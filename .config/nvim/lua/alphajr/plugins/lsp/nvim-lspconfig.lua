@@ -7,6 +7,7 @@ end
 
 -- lspconfig.phpactor.setup({
 -- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
 -- 	filetypes = { "php" },
 -- 	init_options = {
 -- 		["language_server_php_cs_fixer.enabled"] = true,
