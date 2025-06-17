@@ -1,0 +1,35 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$character"""
+
+[directory]
+style = "white"
+truncation_length = 4
+truncate_to_repo = false
+
+[git_branch]
+format = "[$branch]($style) "
+style = "bright-black"
+
+[username]
+style_user = 'purple bold'
+style_root = 'black bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)@[$hostname](bold red) '
+trim_at = '.'
+disabled = false
+
+# Replace the '❯' symbol in the prompt with '➜'
+# [character] # The name of the module we are configuring is 'character'
+# success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
